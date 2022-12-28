@@ -15,6 +15,7 @@ connectDB();
 
 // Route files
 const auth = require("./routes/auth");
+const health = require("./routes/health");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(cors());
 
 // Mount routers
 app.use("/api/v1/auth", auth);
+app.use("/", health);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
